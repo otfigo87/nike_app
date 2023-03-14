@@ -1,10 +1,15 @@
-import {nikeData} from '../data/nikeData';
-console.log(nikeData)
 
-const ProductsList = () => {
-  return (
-    <h1>Products  List</h1>
-  )
-}
+import ProductListItem from './ProductListItem';
+
+const ProductsList = ({ products, cart, setCart }) => {
+  return products.map((product) => (
+    <ProductListItem
+      product={product}
+      cart={cart}
+      setCart={setCart}
+      key={product.id}
+    />
+  ));
+};
 
 export default ProductsList

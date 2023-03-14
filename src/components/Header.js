@@ -1,9 +1,10 @@
 import React from 'react'
 
-const Header = () => {
+const Header = ({ shoppingItems }) => {
   return (
     <header>
         <h1>Nike Store</h1>
+        <p>Shopping Cart: { shoppingItems.length }</p>
     </header>
   )
 }
