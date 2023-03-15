@@ -1,9 +1,17 @@
-import React from 'react'
+import { useContext } from "react";
+import { ProductContext } from "../App"
 
-const ProductListItem = ({ product, cart, setCart }) => {
+
+
+const ProductListItem = ({ product}) => {
+  //use the Context
+  const productContextValue = useContext(ProductContext);
+  const { cart, setCart } = productContextValue;
+
   const handleAddToCart = () => {
     setCart([...cart, product]);
   };
+
   return (
     <>
       <div>

@@ -1,8 +1,12 @@
+import { useContext } from "react";
+import { ProductContext } from "../App";
+import ProductListItem from "./ProductListItem";
 
-import ProductListItem from './ProductListItem';
+const ProductsList = ({ cart, setCart }) => {
 
-const ProductsList = ({ products, cart, setCart }) => {
-  return products.map((product) => (
+  const productContextValue = useContext(ProductContext)
+
+  return productContextValue.data.map((product) => (
     <ProductListItem
       product={product}
       cart={cart}
@@ -12,4 +16,4 @@ const ProductsList = ({ products, cart, setCart }) => {
   ));
 };
 
-export default ProductsList
+export default ProductsList;

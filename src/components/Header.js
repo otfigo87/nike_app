@@ -1,10 +1,14 @@
-import React from 'react'
+import React from 'react';
+import { useContext } from 'react';
+import { ProductContext } from '../App'
 
-const Header = ({ shoppingItems }) => {
+const Header = () => {
+  const productContextValue = useContext(ProductContext);
+  const {cart} = productContextValue
   return (
     <header>
         <h1>Nike Store</h1>
-        <p>Shopping Cart: { shoppingItems.length }</p>
+        <p>Shopping Cart: { cart.length > 0 ? cart.length : null }</p>
     </header>
   )
 }
